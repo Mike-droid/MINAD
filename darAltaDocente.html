@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dando de alta a un docente</title>
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Da+2&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="archivos-css/altaDocente.css">
+    <link rel="stylesheet" href="archivos-css/scrollbar.css">
+</head>
+<body>
+    <header>
+        <h1>Registrando a un docente nuevo</h1>
+    </header>
+    <div class="formulario">
+        <form action=""> <!---Hay que ponerle una acción ----->
+            <div id="numeroTrabajador">
+                <div id="etiNum">
+                    <label for="numTrabajador">Registre el número de trabajador: </label>
+                </div>
+                <div id="txtNumTrabajador" class="bordeBajo">
+                    <input type="number" name="numTrabajador" id="numTrabajador" min="1" placeholder="Número de trabajador">
+                </div>
+            </div>
+            
+            <div id="correoMaestro">
+                <div id="etiCorreo">
+                    <label for="">Escriba el correo institucional del docente: </label>
+                </div>
+                <div id="txtCorreo" class="bordeBajo">
+                    <input type="email" name="correoDocente" id="correoDocente" value="@piedrasnegras.tecnm.mx">
+                </div>
+            </div>
+
+            <div id="txtNombres">
+                <div id="etiNombres">
+                    <label for="txtNombreDocente">Escriba el nombre del docente: </label>
+                </div>
+                <div id="textNombres" class="bordeBajo">
+                    <input type="text" name="txtNombreDocente" id="txtNombreDocente" placeholder="Nombre del docente">
+                </div>
+            </div>
+            
+            <div id="txtApellidos">
+                <div id="etiApe">
+                    <label for="txtApellidoDocente">Escriba los apellidos del docente: </label>
+                </div>
+                <div id="textApe" class="bordeBajo">
+                    <input type="text" name="txtApellidoDocente" id="txtApellidoDocente" placeholder="Apellidos del docente">
+                </div>
+            </div>
+
+            <div> 
+                <input type="submit" value="Enviar" class="botones" id="enviar" name="enviar">
+                <input type="reset" value="Limpiar campos" class="botones" id="limpiar">
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>
