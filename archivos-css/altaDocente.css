@@ -35,8 +35,8 @@ div{
 
 .formulario input[type="text"],
             input[type="email"],
-            input[type="number"]{
-
+            input[type="number"],
+            input[type="password"]{
                 background-color: transparent;
                 border: none;
                 border-bottom: 2px solid blue;

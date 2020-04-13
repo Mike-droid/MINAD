@@ -13,40 +13,59 @@
         <h1>Registrando a un docente nuevo</h1>
     </header>
     <div class="formulario">
-        <form action=""> <!---Hay que ponerle una acción ----->
-            <div id="numeroTrabajador">
-                <div id="etiNum">
+        <form action="insertarDocentes.php" method="POST"> <!---Hay que ponerle una acción ----->
+
+            <div>
+                <div>
                     <label for="numTrabajador">Registre el número de trabajador: </label>
                 </div>
-                <div id="txtNumTrabajador" class="bordeBajo">
+                <div>
                     <input type="number" name="numTrabajador" id="numTrabajador" min="1" placeholder="Número de trabajador">
                 </div>
             </div>
             
-            <div id="correoMaestro">
-                <div id="etiCorreo">
+            <div>
+                <div>
                     <label for="">Escriba el correo institucional del docente: </label>
                 </div>
-                <div id="txtCorreo" class="bordeBajo">
+                <div>
                     <input type="email" name="correoDocente" id="correoDocente" value="@piedrasnegras.tecnm.mx">
                 </div>
             </div>
 
-            <div id="txtNombres">
-                <div id="etiNombres">
+            <div>
+                <div>
                     <label for="txtNombreDocente">Escriba el nombre del docente: </label>
                 </div>
-                <div id="textNombres" class="bordeBajo">
+                <div>
                     <input type="text" name="txtNombreDocente" id="txtNombreDocente" placeholder="Nombre del docente">
                 </div>
             </div>
             
-            <div id="txtApellidos">
-                <div id="etiApe">
+            <div>
+                <div>
                     <label for="txtApellidoDocente">Escriba los apellidos del docente: </label>
                 </div>
-                <div id="textApe" class="bordeBajo">
+                <div>
                     <input type="text" name="txtApellidoDocente" id="txtApellidoDocente" placeholder="Apellidos del docente">
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <label for="contraDocente">Asigne una contraseña para el docente: </label>
+                </div>
+                <div>
+                    <input type="password" name="contraDocente" id="contraDocente" placeholder="¡No me olvides!">
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <label for="celDocente">Número de celular del docente:</label>
+                </div>
+                <div>
+                    <input type="number" name="celDocente" id="celDocente" placeholder="Máximo 10 dígitos" min="1">
                 </div>
             </div>
 
