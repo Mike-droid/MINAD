@@ -30,13 +30,22 @@
 
         if ($numeroRegistro!=0) 
         {
-            session_start(); //iniciamos sesión para el usuario que se acaba de loguear
+                session_start(); //iniciamos sesión para el usuario que se acaba de loguear
 
                 $_SESSION["usuario"]=$_POST["correo"];
                 //En la variable super global $_SESSION con 'usuario' para identificar a la variable
                 //'correo' es el cuadro del texto del formulario
 
-                header("location:vistaDocente1.php");
+                //Comprobación para ver si se conecta el administrador o un docente 
+                if (strcasecmp($_POST["correo"],"7777@piedrasnegras.tecnm.mx")==0) 
+                {
+                    header("location:pagina_admon.html"); //página del administrador
+                } 
+                else
+                {
+                    header("location:vistaDocente1.php"); //página del docente
+                }
+                
         } 
         else 
         {
