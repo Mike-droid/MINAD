@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="archivos-css/portada.css" type="text/css">
     <link rel="stylesheet" href="archivos-css/scrollbar.css">
     <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="shortcut icon" type="image/png" href="imagenes/minadLogo.png">
 
     <script src="archivos-js/Jquery/jquery-1.6.3.min.js"></script>
     <!-- Este script es para que la página haga el efecto fadeIn en 2 segundos -->
