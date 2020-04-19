@@ -49,7 +49,7 @@
         } 
         else 
         {
-            header("location:index.php");
+            header("location:index.php"); //Si no está registrado el usuario lo regresa a la página index.php
         }
         
     } catch (Exception $e) {
