@@ -9,11 +9,11 @@
     <?php 
         include("datosConexionBBDD.php");
 
-        $numTrabajador = $_GET["NumeroTrabajador"]; //debe llamarse igual que docentes.php línea 65
+        $idCarrera = $_GET["idCarrera"]; //debe llamarse igual que carreras.php línea 44
 
-        $base->query("DELETE FROM docentes WHERE NumeroTrabajador = '$numTrabajador'");
+        $base->query("DELETE FROM carrera WHERE idCarrera = '$idCarrera'");
 
-        header("location:docentes.php");
+        header("location:carreras.php");
     ?>
 </body>
 </html>

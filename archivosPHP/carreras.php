@@ -51,7 +51,7 @@
                         </a>
                     </td>
                     <td>
-                        <a href="">
+                        <a href="borrarCarreras.php?idCarrera= <?php echo $carreras->idCarrera;?>">
                             <input type="button" value="Borrar">
                         </a>
                     </td>

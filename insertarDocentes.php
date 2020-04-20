@@ -51,7 +51,7 @@
     ?>
 
     <p>
-    <button><a href="vistaDocente1.php">Regresar a la página de inicio</a></button>
+    <button><a href="index.php">Regresar a la página de inicio</a></button>
     </p>
 </body>
 </html>
