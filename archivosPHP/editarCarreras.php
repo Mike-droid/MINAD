@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Actualizar información de las carreras</title>
 </head>
 <body>
     <h1>Actualizar</h1>
@@ -11,7 +11,7 @@
         include("datosConexionBBDD.php");
         
         if (!isset($_POST["bot_act"])) {
-            $idCarrera = $_GET['idCarrera'];
+            $idCarrera = $_GET['idCarrera']; //tiene que llamarse igual que carreras.php línea 44
             $nombreCarrera = $_GET['NombreCarrera'];
         } else {
             $idCarrera = $_POST['idCarrera'];
@@ -25,7 +25,6 @@
 
             header("location:carreras.php");
         }
-        
     ?>
 
     <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
