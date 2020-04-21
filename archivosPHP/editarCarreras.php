@@ -31,16 +31,16 @@
     <table>
         <tr>
             <td>ID Carrera</td>
-            <td><label for=""></label>
+            <td><label for="">
             <input type="hidden" name="idCarrera" value="<?php echo $idCarrera;?>">
             <?php echo $idCarrera;?>
-            </td>
+            </label></td>
         </tr>
         <tr>
             <td>Nombre de Carrera</td>
-            <td><label for=""></label>
+            <td><label for="">
             <input type="text" name="NombreCarrera" id="" value="<?php echo $nombreCarrera; ?>">
-            </td>
+            </label></td>
         </tr>
         <tr>
             <td>

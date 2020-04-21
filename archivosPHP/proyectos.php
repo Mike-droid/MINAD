@@ -12,7 +12,7 @@
 
         $registros = $base->query("SELECT * FROM proyectos")->fetchAll(PDO::FETCH_OBJ);
 
-        if (isset($_POST["create"])) {
+        if (isset($_POST["create"])) { //boton del submit
             $idProyectos = $_POST["idproyecto"];
             $nombrePro = $_POST["nombrepro"];
             $fechaInicio = $_POST["fechainicio"];
