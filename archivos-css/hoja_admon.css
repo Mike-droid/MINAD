@@ -30,7 +30,8 @@ html{
 
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(128deg, rgba(2,80,200,1) 30%, rgba(246,215,7,1) 90%);
+    /*background: linear-gradient(128deg, rgba(2,80,200,1) 30%, rgba(246,215,7,1) 90%);*/
+    background-color: #3366ff;
 }
 
 #opciones_admin{
