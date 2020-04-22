@@ -96,8 +96,8 @@
                             <input type="button" value="Actualizar">
                         </a>
                     </td>
-                    <td> <!---- FALTA BORRAR REGISTROS--->
-                        <a href="">
+                    <td>
+                        <a href="borrarProyectos.php?idProyectos= <?php echo $proyectos->idProyectos ;?>">
                             <input type="button" value="Borrar">
                         </a>
                     </td>

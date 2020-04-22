@@ -12,7 +12,7 @@
 
         $base->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = "SELECT * FROM docentes WHERE CorreoDocente = :correo AND Contrasena = :password";
+        $sql = "SELECT CorreoDocente, Contrasena FROM docentes WHERE CorreoDocente = :correo AND Contrasena = :password";
 
         $resultado = $base->prepare($sql);
 

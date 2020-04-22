@@ -50,7 +50,7 @@
                 <select name="nombreDocentes" id="nombreDocentes">
 
                 <?php
-                include 'datosConexionBBDD.php'; //En el archivo hay una variable que tiene un método para conectarse a la base de datos, se llama $conexion
+                include 'archivosPHP/datosConexionBBDD.php'; //En el archivo hay una variable que tiene un método para conectarse a la base de datos, se llama $conexion
 
                 $consulta = "SELECT * FROM docentes";
                 $ejecutar = mysqli_query($conexion,$consulta) or die(mysqli_error($conexion));
@@ -72,7 +72,7 @@
                 <div>
                     <select name="convocatoriaID" id="convocatoriaID">
                         <?php
-                            include 'datosConexionBBDD.php';
+                            include 'archivosPHP/datosConexionBBDD.php';
 
                             $consulta = "SELECT * FROM convocatorias";
                             $ejecutar = mysqli_query($conexion,$consulta) or die(mysqli_error($conexion));
@@ -94,7 +94,7 @@
                 <div>
                     <select name="" id="">
                         <?php 
-                            include 'datosConexionBBDD.php';
+                            include 'archivosPHP/datosConexionBBDD.php';
 
                             $consulta = "SELECT * FROM institucion";
                             $ejecutar = mysqli_query($conexion,$consulta) or die(mysqli_error($conexion));

@@ -90,6 +90,7 @@ h2{
     height: 64px;
     display: flex;
     justify-content: center;
+    border: 3px solid black;
 }
 
 .iconito:hover{
