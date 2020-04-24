@@ -6,7 +6,7 @@
     <title>Actualizar información de los proyectos</title>
 </head>
 <body>
-    <!-------<a href="proyectos.php">Regresar</a>---->
+    <a href="proyectos.php">Regresar</a>
     <h1>Actualizar</h1>
     <?php 
         include("datosConexionBBDD.php");
@@ -18,7 +18,6 @@
             $fechaF = $_GET["FechaFin"];
             $FKdoc = $_GET["Docentes_NumeroTrabajador"]; //tiene que llamarse igual que proyectos.php línea 71
             $FKconvoID = $_GET["Convocatorias_idConvocatorias"];
-            $FKconvoInst = $_GET["Convocatorias_Institucion_idInstitucion"];
         } else {
             $idProyecto = $_POST["idProyectos"]; //tiene que llamarse igual que proyectos.php línea 63
             $nombrePro = $_POST["NombreProyecto"];
@@ -26,14 +25,12 @@
             $fechaF = $_POST["FechaFin"];
             $FKdoc = $_POST["Docentes_NumeroTrabajador"]; //tiene que llamarse igual que proyectos.php línea 71
             $FKconvoID = $_POST["Convocatorias_idConvocatorias"];
-            $FKconvoInst = $_POST["Convocatorias_Institucion_idInstitucion"];
 
             $sql = "UPDATE proyectos SET NombreProyecto = :nomPro,
              FechaInicio = :dateI,
              FechaFin = :dateF,
              Docentes_NumeroTrabajador = :docnumT, 
-             Convocatorias_idConvocatorias = :conID, 
-             Convocatorias_Institucion_idInstitucion = :conInst 
+             Convocatorias_idConvocatorias = :conID 
              WHERE idProyectos = :idPRO";
 
             $resultado = $base->prepare($sql);
@@ -43,7 +40,6 @@
                                       ":dateF"=>$fechaF,
                                       ":docnumT"=>$FKdoc,
                                       ":conID"=>$FKconvoID,
-                                      ":conInst"=>$FKconvoInst,
                                       ":idPRO"=>$idProyecto));
 
             header("location:proyectos.php");
@@ -88,7 +84,7 @@
                         <!----Cuando usamos llaves foráneas hay que usar array->objeto--->
                         <?php foreach($registrosDocentes as $redoc):?>
                         <option value="<?php echo $redoc->NumeroTrabajador;?>">
-                        <?php echo $redoc->Nombre . " " . $redoc->Apellidos;?>
+                        <?php echo $redoc->Nombres . " " . $redoc->Apellidos;?>
                         </option>
                         <?php endforeach;?>   
                     </select>
@@ -112,24 +108,9 @@
             </label></td>
         </tr>
         <tr>
-            <td>Institución</td>
-            <td><label for="">
-            <select name="Convocatorias_Institucion_idInstitucion" id="">
-                <?php 
-                        include("datosConexionBBDD.php");
-                        $registrosInstituciones = $base->query("SELECT * FROM institucion")->fetchAll(PDO::FETCH_OBJ);
-                        ?>
-                        <!----Cuando usamos llaves foráneas hay que usar array->objeto--->
-                        <?php foreach($registrosInstituciones as $insti):?>
-                        <option value="<?php echo $insti->idInstitucion;?>">
-                        <?php echo $insti->NombreInstitucion;?>
-                        </option>
-                        <?php endforeach;?>
-                    </select>
-            </label></td>
-        </tr>
-        <tr>
+            <td>
             <input type="submit" value="Actualizar" name="bot_act">
+            </td>
         </tr>
     </table>
     </form>

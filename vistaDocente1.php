@@ -18,7 +18,7 @@
     <h2>Estoy en x proyecto</h2>
     <h2>Estan x y z alumnos conmigo</h2>
 
-    <p><a href="darAltaProyecto.php">Dar alta proyecto</a></p>
+    <p><a href="">Dar alta proyecto</a></p>
 
     <p><a href="cerrarSesion.php">Cerrar sesión</a></p>
 </body>

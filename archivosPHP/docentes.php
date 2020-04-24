@@ -12,7 +12,7 @@
     
     include("datosConexionBBDD.php");
 
-    $registros = $base->query("SELECT * FROM DOCENTES")->fetchAll(PDO::FETCH_OBJ);
+    $registros = $base->query("SELECT * FROM docentes")->fetchAll(PDO::FETCH_OBJ);
 
         if (isset($_POST["create"])) { //Si pulsaste el botón de submit ... 
             $NumTra = $_POST["NumTra"];
@@ -25,7 +25,7 @@
             $sql = "INSERT INTO docentes 
             (NumeroTrabajador,
             CorreoDocente,
-            Nombre,
+            Nombres,
             Apellidos,
             Contrasena,
             Telefono) 
@@ -64,7 +64,7 @@
             <tr>
                 <td> <?php echo $docente->NumeroTrabajador; ?> </td>
                 <td> <?php echo $docente->CorreoDocente; ?> </td>
-                <td> <?php echo $docente->Nombre; ?> </td>
+                <td> <?php echo $docente->Nombres; ?> </td>
                 <td> <?php echo $docente->Apellidos; ?> </td>
                 <td> <?php echo $docente->Contrasena; ?> </td>
                 <td> <?php echo $docente->Telefono; ?> </td>
@@ -72,7 +72,7 @@
                 <td>
                     <a href="editarDocentes.php?NumeroTrabajador= <?php echo $docente->NumeroTrabajador?> &
                             CorreoDocente= <?php echo $docente->CorreoDocente?> & 
-                            Nombre= <?php echo $docente->Nombre?> & 
+                            Nombres= <?php echo $docente->Nombres?> & 
                             Apellidos= <?php echo $docente->Apellidos?> & 
                             Contrasena= <?php echo $docente->Contrasena?> &
                             Telefono= <?php echo $docente->Telefono?>">

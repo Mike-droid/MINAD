@@ -19,7 +19,6 @@
             $fechaFin = $_POST["fechafin"];
             $doc_num = $_POST["doc_num"];
             $convoID = $_POST["convoID"];
-            $convoInstiID = $_POST["convoInstiID"];
 
             $sql = "INSERT INTO proyectos
             (idProyectos,
@@ -27,9 +26,8 @@
             FechaInicio,
             FechaFin,
             Docentes_NumeroTrabajador,
-            Convocatorias_idConvocatorias,
-            Convocatorias_Institucion_idInstitucion)
-            VALUES (:idpro,:nombrepro,:fechaI,:fechaF,:FKdoc,:FKcon,:FKinst)";
+            Convocatorias_idConvocatorias)
+            VALUES (:idpro,:nombrepro,:fechaI,:fechaF,:FKdoc,:FKcon)";
 
             $resultado = $base->prepare($sql);
 
@@ -39,8 +37,7 @@
             ":fechaI"=>$fechaInicio,
             ":fechaF"=>$fechaFin,
             ":FKdoc"=>$doc_num,
-            ":FKcon"=>$convoID,
-            ":FKinst"=>$convoInstiID));
+            ":FKcon"=>$convoID));
 
             header("location:proyectos.php");
         }
@@ -55,7 +52,6 @@
                 <td>Fecha de finalización</td>
                 <td>Docente a cargo del proyecto</td>
                 <td>ID de convocatoria</td>
-                <td>Nombre la institución</td>
             </tr>
 
             <?php foreach($registros as $proyectos):?>
@@ -67,23 +63,14 @@
                     <td> <?php 
                             include("datosConexionBBDD.php");
                             $consultaDoc = $base->query
-                            ("SELECT Nombre, Apellidos FROM docentes WHERE NumeroTrabajador = 
+                            ("SELECT Nombres, Apellidos FROM docentes WHERE NumeroTrabajador = 
                             $proyectos->Docentes_NumeroTrabajador")->fetchAll(PDO::FETCH_OBJ);
                             foreach($consultaDoc as $resultado2){
-                                echo $resultado2->Nombre . " " . $resultado2->Apellidos;
+                                echo $resultado2->Nombres . " " . $resultado2->Apellidos;
                             }
                          ?> 
                     </td>
                     <td> <?php echo $proyectos->Convocatorias_idConvocatorias ;?> </td>
-                    <td> <?php 
-                            include("datosConexionBBDD.php");
-                            $consultaInsti = $base->query
-                            ("SELECT NombreInstitucion FROM institucion WHERE idInstitucion = 
-                            $proyectos->Convocatorias_Institucion_idInstitucion")->fetchAll(PDO::FETCH_OBJ);
-                            foreach($consultaInsti as $resultado1){
-                                echo $resultado1->NombreInstitucion;
-                            }
-                         ?> </td>
 
                     <td>
                         <a href="actualizarProyectos.php?idProyectos= <?php echo $proyectos->idProyectos;?> &
@@ -91,8 +78,7 @@
                                  FechaInicio= <?php echo $proyectos->FechaInicio;?> &
                                  FechaFin= <?php echo $proyectos->FechaFin;?> &
                                  Docentes_NumeroTrabajador= <?php echo $proyectos->Docentes_NumeroTrabajador ;?> &
-                                 Convocatorias_idConvocatorias= <?php echo $proyectos->Convocatorias_idConvocatorias;?> &
-                                 Convocatorias_Institucion_idInstitucion= <?php echo $proyectos->Convocatorias_Institucion_idInstitucion;?>">
+                                 Convocatorias_idConvocatorias= <?php echo $proyectos->Convocatorias_idConvocatorias;?>">
                             <input type="button" value="Actualizar">
                         </a>
                     </td>
@@ -118,7 +104,7 @@
                         <!----Cuando usamos llaves foráneas hay que usar array->objeto--->
                         <?php foreach($registrosDocentes as $redoc):?>
                         <option value="<?php echo $redoc->NumeroTrabajador;?>">
-                        <?php echo $redoc->Nombre . " " . $redoc->Apellidos;?>
+                        <?php echo $redoc->Nombres . " " . $redoc->Apellidos;?>
                         </option>
                         <?php endforeach;?>   
                     </select>
@@ -133,20 +119,6 @@
                         <?php foreach($registrosConvocatorias as $convo):?>
                         <option value="<?php echo $convo->idConvocatorias;?>">
                         <?php echo $convo->idConvocatorias;?>
-                        </option>
-                        <?php endforeach;?>
-                    </select>
-                </td>
-                <td>
-                <select name="convoInstiID" id="">
-                <?php 
-                        include("datosConexionBBDD.php");
-                        $registrosInstituciones = $base->query("SELECT * FROM institucion")->fetchAll(PDO::FETCH_OBJ);
-                        ?>
-                        <!----Cuando usamos llaves foráneas hay que usar array->objeto--->
-                        <?php foreach($registrosInstituciones as $insti):?>
-                        <option value="<?php echo $insti->idInstitucion;?>">
-                        <?php echo $insti->NombreInstitucion;?>
                         </option>
                         <?php endforeach;?>
                     </select>

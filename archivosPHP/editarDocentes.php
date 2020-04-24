@@ -13,19 +13,19 @@
         if (!isset($_POST["bot_act"])) {
             $numTrab = $_GET['NumeroTrabajador']; //Tiene que llamarse igual que docente.php línea 65
             $correo = $_GET['CorreoDocente'];
-            $nombre = $_GET['Nombre'];
+            $nombre = $_GET['Nombres'];
             $apellido = $_GET['Apellidos'];
             $contra = $_GET['Contrasena'];
             $tel = $_GET['Telefono'];
         } else {
             $numTrab = $_POST['NumeroTrabajador'];
             $correo = $_POST['CorreoDocente'];
-            $nombre = $_POST['Nombre'];
+            $nombre = $_POST['Nombres'];
             $apellido = $_POST['Apellidos'];
             $contra = $_POST['Contrasena'];
             $tel = $_POST['Telefono'];
 
-            $sql = "UPDATE docentes SET CorreoDocente = :correo , Nombre = :nom , Apellidos = :ape , Contrasena = :cont , Telefono = :tel WHERE NumeroTrabajador = :numT";
+            $sql = "UPDATE docentes SET CorreoDocente = :correo , Nombres = :nom , Apellidos = :ape , Contrasena = :cont , Telefono = :tel WHERE NumeroTrabajador = :numT";
 
             $resultado = $base->prepare($sql);
 
@@ -56,7 +56,7 @@
                     <td>Nombre</td>
                     <td>
                         <label for=""></label>
-                        <input type="text" name="Nombre" id="" value="<?php echo $nombre; ?>">
+                        <input type="text" name="Nombres" id="" value="<?php echo $nombre; ?>">
                     </td>
                 </tr>
                 <tr>

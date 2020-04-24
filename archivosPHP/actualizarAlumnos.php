@@ -15,7 +15,7 @@
         if (!isset($_POST["bot_act"])) {
             $NumeroControl = $_GET["NumeroControl"]; //tiene que llamarse igual que alumnos.php línea 61
             $emailA = $_GET["CorreoAlumno"];
-            $nombre = $_GET["Nombre"];
+            $nombre = $_GET["Nombres"];
             $apellidos = $_GET["Apellidos"];
             $FK_proyectosID = $_GET["Proyectos_idProyectos"]; //tiene que llamarse igual que alumnos.php línea 69
             $FK_idDocente = $_GET["Proyectos_Docentes_NumeroTrabajador"];
@@ -23,14 +23,14 @@
         } else {
             $NumeroControl = $_POST["NumeroControl"]; //tiene que llamarse igual que alumnos.php línea 61
             $emailA = $_POST["CorreoAlumno"];
-            $nombre = $_POST["Nombre"];
+            $nombre = $_POST["Nombres"];
             $apellidos = $_POST["Apellidos"];
             $FK_proyectosID = $_POST["Proyectos_idProyectos"]; //tiene que llamarse igual que alumnos.php línea 69
             $FK_idDocente = $_POST["Proyectos_Docentes_NumeroTrabajador"];
             $FK_idCarrera = $_POST["Carrera_idCarrera"];
 
             $sql = "UPDATE alumnos SET CorreoAlumno = :corrA,
-            Nombre = :nombA,
+            Nombres = :nombA,
             Apellidos = :apeA,
             Proyectos_idProyectos = :proID,
             Proyectos_Docentes_NumeroTrabajador = :docNum,
@@ -69,7 +69,7 @@
             <tr>
                 <td>Nombres</td>
                 <td><label for="">
-                    <input type="text" name="Nombre" id="" value="<?php echo $nombre ;?> ">
+                    <input type="text" name="Nombres" id="" value="<?php echo $nombre ;?> ">
                 </label></td>
             </tr>
             <tr>
@@ -104,7 +104,7 @@
                         ?>
                         <?php foreach($registrosDocentes as $maestros): ?>
                             <option value="<?php echo $maestros->NumeroTrabajador ;?>">
-                            <?php echo $maestros->Nombre . " " . $maestros->Apellidos ;?>
+                            <?php echo $maestros->Nombres . " " . $maestros->Apellidos ;?>
                             </option>
                         <?php endforeach;?>    
                     </select>

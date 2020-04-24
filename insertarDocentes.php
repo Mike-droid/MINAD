@@ -16,14 +16,14 @@
 
     try {
 
-        $base = new PDO('mysql:host=localhost:3308; dbname=proyectosinvestigacion', 'root','');
+        $base = new PDO('mysql:host=localhost:3308; dbname=proyectosinvestigacion2', 'root','');
 
         $base->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //esto ayudará en el catch, informará del error
         //Establece un atributo en el manejador de la base de datos.
 
         $base->exec("SET CHARACTER SET utf8");
 
-        $sql = "INSERT INTO docentes(NumeroTrabajador, CorreoDocente, Nombre, Apellidos, Contrasena, Telefono)
+        $sql = "INSERT INTO docentes(NumeroTrabajador, CorreoDocente, Nombres, Apellidos, Contrasena, Telefono)
         VALUES (:numTrabajador,:correoDocente,:txtNombreDocente,:txtApellidoDocente,:contraDocente,:celDocente);";
 
         $resultado=$base->prepare($sql);

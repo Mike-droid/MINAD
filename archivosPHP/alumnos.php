@@ -23,7 +23,7 @@
             $sql = "INSERT INTO alumnos
             (NumeroControl,
              CorreoAlumno,
-             Nombre,
+             Nombres,
              Apellidos,
              Proyectos_idProyectos,
              Proyectos_Docentes_NumeroTrabajador,
@@ -60,7 +60,7 @@
                 <tr>
                     <td><?php echo $alumnos->NumeroControl ;?></td>
                     <td><?php echo $alumnos->CorreoAlumno ;?></td>
-                    <td><?php echo $alumnos->Nombre ;?></td>
+                    <td><?php echo $alumnos->Nombres ;?></td>
                     <td><?php echo $alumnos->Apellidos ;?></td>
                     <td><?php 
                             include("datosConexionBBDD.php");
@@ -75,10 +75,10 @@
                     <?php 
                             include("datosConexionBBDD.php");
                             $consultaDocs = $base->query(
-                            "SELECT Nombre, Apellidos FROM docentes WHERE NumeroTrabajador = 
+                            "SELECT Nombres, Apellidos FROM docentes WHERE NumeroTrabajador = 
                             $alumnos->Proyectos_Docentes_NumeroTrabajador")->fetchAll(PDO::FETCH_OBJ);
                             foreach($consultaDocs as $resultado3){
-                                echo $resultado3->Nombre . " " . $resultado3->Apellidos;
+                                echo $resultado3->Nombres . " " . $resultado3->Apellidos;
                             }
                         ?>
                     </td>
@@ -97,7 +97,7 @@
                     <td>
                         <a href="actualizarAlumnos.php?NumeroControl= <?php echo $alumnos->NumeroControl ;?> &
                         CorreoAlumno= <?php echo $alumnos->CorreoAlumno ;?> & 
-                        Nombre= <?php echo $alumnos->Nombre ;?> & 
+                        Nombres= <?php echo $alumnos->Nombres ;?> & 
                         Apellidos= <?php echo $alumnos->Apellidos ;?> & 
                         Proyectos_idProyectos= <?php echo $alumnos->Proyectos_idProyectos ;?> &
                         Proyectos_Docentes_NumeroTrabajador= <?php echo $alumnos->Proyectos_Docentes_NumeroTrabajador ;?> &
@@ -107,7 +107,7 @@
                     </td>
 
                     <td>
-                        <a href="">
+                        <a href="borrarAlumnos.php?NumeroControl= <?php echo $alumnos->NumeroControl ;?>">
                             <input type="button" value="Borrar">
                         </a>
                     </td>
@@ -140,7 +140,7 @@
                         ?>
                         <?php foreach($registrosDoc as $docentes):?>
                             <option value="<?php echo $docentes->NumeroTrabajador ;?>">
-                            <?php echo $docentes->Nombre . " " . $docentes->Apellidos;?>
+                            <?php echo $docentes->Nombres . " " . $docentes->Apellidos;?>
                             </option>
                         <?php endforeach;?>
                     </select>
