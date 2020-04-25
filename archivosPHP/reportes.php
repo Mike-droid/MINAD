@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Da+2&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../archivos-css/tablas.css">
     <title>Reportes de proyectos</title>
 </head>
 <body>
@@ -43,10 +45,10 @@
     <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
         <table border="1">
             <tr>
-                <td>ID Reporte</td>
-                <td>Descripción</td>
-                <td>Proyecto</td>
-                <td>Docente</td>
+                <td class="table_column_name">ID Reporte</td>
+                <td class="table_column_name">Descripción</td>
+                <td class="table_column_name">Proyecto</td>
+                <td class="table_column_name">Docente</td>
             </tr>
             
             <?php foreach($registros as $reportes): ?>
@@ -75,7 +77,7 @@
                             }
                         ?>
                     </td>
-                    <td>
+                    <td class="boton_accion">
                         <a href="actualizarReportes.php?idReporte= <?php echo $reportes->idReporte ;?> &
                         Descripcion= <?php echo $reportes->Descripcion ;?> & 
                         Proyectos_idProyectos= <?php echo $reportes->Proyectos_idProyectos ;?> &
@@ -83,7 +85,7 @@
                             <input type="button" value="Actualizar">
                         </a>
                     </td>
-                    <td>
+                    <td class="boton_accion">
                         <a href="borrarReportes.php?idReporte= <?php echo $reportes->idReporte;?>">
                             <input type="button" value="Borrar">
                         </a>
@@ -121,7 +123,7 @@
                         <?php endforeach;?>
                     </select>
                 </td>
-                <td><input type="submit" value="Insertar" name="create"></td>
+                <td><input type="submit" value="Insertar" name="create" class="boton_accion"></td>
             </tr>  
         </table>
     </form>

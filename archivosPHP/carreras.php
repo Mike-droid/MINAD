@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Da+2&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../archivos-css/tablas.css">
     <title>Document</title>
 </head>
 <body>
@@ -35,8 +37,8 @@
     <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
         <table border="1">
             <tr>
-                <td>ID Carrera</td>
-                <td>Carrera</td>
+                <td class="table_column_name" >ID Carrera</td>
+                <td class="table_column_name" >Carrera</td>
             </tr>
 
             <?php foreach($registros as $carreras): ?>
@@ -44,13 +46,13 @@
                     <td> <?php echo $carreras->idCarrera; ?></td>
                     <td> <?php echo $carreras->NombreCarrera; ?> </td>
 
-                    <td>
+                    <td class="boton_accion">
                         <a href="editarCarreras.php?idCarrera= <?php echo $carreras->idCarrera;?> &
                                  NombreCarrera= <?php echo $carreras->NombreCarrera ;?>">
                             <input type="button" value="Actualizar">
                         </a>
                     </td>
-                    <td>
+                    <td class="boton_accion">
                         <a href="borrarCarreras.php?idCarrera= <?php echo $carreras->idCarrera;?>">
                             <input type="button" value="Borrar">
                         </a>
@@ -61,7 +63,7 @@
             <tr>
                 <td><input type="hidden" name="idCarrera"></td>
                 <td><input type="text" name="nombreCarrera" id=""></td>
-                <td><input type="submit" value="Insertar registro" name="create"></td>
+                <td><input type="submit" value="Insertar registro" name="create" class="boton_accion"></td>
             </tr>
         </table>
     </form>

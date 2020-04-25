@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Da+2&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../archivos-css/tablas.css">
     <title>Información de los alumnos</title>
 </head>
 <body>
@@ -47,13 +49,13 @@
     <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
         <table border="1">
             <tr>
-                <td>Número de control</td>
-                <td>Email</td>
-                <td>Nombre</td>
-                <td>Apellidos</td>
-                <td>Proyecto</td>
-                <td>Docente</td>
-                <td>Carrera</td>
+                <td class="table_column_name" >Número de control</td>
+                <td class="table_column_name" >Email</td>
+                <td class="table_column_name" >Nombre</td>
+                <td class="table_column_name" >Apellidos</td>
+                <td class="table_column_name" >Proyecto</td>
+                <td class="table_column_name" >Docente</td>
+                <td class="table_column_name" >Carrera</td>
             </tr>
 
             <?php foreach($registros as $alumnos): ?>
@@ -94,7 +96,7 @@
                         ?>
                     </td>
 
-                    <td>
+                    <td class="boton_accion">
                         <a href="actualizarAlumnos.php?NumeroControl= <?php echo $alumnos->NumeroControl ;?> &
                         CorreoAlumno= <?php echo $alumnos->CorreoAlumno ;?> & 
                         Nombres= <?php echo $alumnos->Nombres ;?> & 
@@ -106,7 +108,7 @@
                         </a>
                     </td>
 
-                    <td>
+                    <td class="boton_accion">
                         <a href="borrarAlumnos.php?NumeroControl= <?php echo $alumnos->NumeroControl ;?>">
                             <input type="button" value="Borrar">
                         </a>
@@ -158,7 +160,7 @@
                         <?php endforeach;?>
                     </select>
                 </td>
-                <td><input type="submit" value="Insertar registro" name="create"></td>
+                <td><input type="submit" value="Insertar registro" name="create" class="boton_accion"></td>
             </tr>
         </table>
     </form>

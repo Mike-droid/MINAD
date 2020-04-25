@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Da+2&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../archivos-css/tablas.css">
     <title>Instituciones tienen carreras</title>
 </head>
 <body>
@@ -34,8 +36,8 @@
     <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
         <table border="1">
             <tr>
-                <td>Institución</td>
-                <td>Carrera</td>
+                <td class="table_column_name">Institución</td>
+                <td class="table_column_name">Carrera</td>
             </tr>
 
             <?php foreach($registros as $datos): ?>
@@ -94,7 +96,7 @@
                     </select>
                 </td>
                 <td>
-                    <input type="submit" value="Insertar" name="create">
+                    <input type="submit" value="Insertar" name="create" class="boton_accion">
                 </td>
             </tr>
         </table>

@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Da+2&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../archivos-css/tablas.css">
     <title>Instituciones</title>
 </head>
 <body>
@@ -35,8 +37,8 @@
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <table border="1">
                 <tr>
-                    <td>ID Institución</td>
-                    <td>Nombre de la institución</td>
+                    <td class="table_column_name">ID Institución</td>
+                    <td class="table_column_name">Nombre de la institución</td>
                 </tr>
                 
                 <?php foreach($registros as $instituciones):?>
@@ -44,12 +46,12 @@
                         <td><?php echo $instituciones->idInstitucion;?></td>
                         <td><?php echo $instituciones->NombreInstitucion;?></td>
 
-                        <td><a href="actualizarInstituciones.php?idInstitucion= <?php  echo $instituciones->idInstitucion;?> &
+                        <td class="boton_accion" ><a href="actualizarInstituciones.php?idInstitucion= <?php  echo $instituciones->idInstitucion;?> &
                                      NombreInstitucion= <?php echo $instituciones->NombreInstitucion;?>">
                             <input type="button" value="Actualizar">
                         </a></td>
 
-                        <td><a href="borrarInstituciones.php?idInstitucion= <?php echo $instituciones->idInstitucion ;?> ">
+                        <td class="boton_accion" ><a href="borrarInstituciones.php?idInstitucion= <?php echo $instituciones->idInstitucion ;?> ">
                             <input type="button" value="Borrar">
                         </a></td>
                     </tr>
@@ -58,7 +60,7 @@
                 <tr>
                     <td><input type="hidden" name="idInstitucion"></td>
                     <td><input type="text" name="NombreInstitucion" id=""></td>
-                    <td><input type="submit" value="Insertar registros" name="create"></td>
+                    <td><input type="submit" value="Insertar registros" name="create" class="table_column_name"></td>
                 </tr>
             </table>
         </form>

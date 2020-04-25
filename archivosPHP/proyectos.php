@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Da+2&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../archivos-css/tablas.css">
     <title>Proyectos</title>
 </head>
 <body>
@@ -46,12 +48,12 @@
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <table border="1">
             <tr>
-                <td>ID de proyecto</td>
-                <td>Nombre de proyecto</td>
-                <td>Fecha de inico</td>
-                <td>Fecha de finalización</td>
-                <td>Docente a cargo del proyecto</td>
-                <td>ID de convocatoria</td>
+                <td class="table_column_name">ID de proyecto</td>
+                <td class="table_column_name">Nombre de proyecto</td>
+                <td class="table_column_name">Fecha de inico</td>
+                <td class="table_column_name">Fecha de finalización</td>
+                <td class="table_column_name">Docente a cargo del proyecto</td>
+                <td class="table_column_name">ID de convocatoria</td>
             </tr>
 
             <?php foreach($registros as $proyectos):?>
@@ -72,7 +74,7 @@
                     </td>
                     <td> <?php echo $proyectos->Convocatorias_idConvocatorias ;?> </td>
 
-                    <td>
+                    <td class="boton_accion">
                         <a href="actualizarProyectos.php?idProyectos= <?php echo $proyectos->idProyectos;?> &
                                  NombreProyecto= <?php echo $proyectos->NombreProyecto;?> &
                                  FechaInicio= <?php echo $proyectos->FechaInicio;?> &
@@ -82,7 +84,7 @@
                             <input type="button" value="Actualizar">
                         </a>
                     </td>
-                    <td>
+                    <td class="boton_accion">
                         <a href="borrarProyectos.php?idProyectos= <?php echo $proyectos->idProyectos ;?>">
                             <input type="button" value="Borrar">
                         </a>
@@ -123,7 +125,7 @@
                         <?php endforeach;?>
                     </select>
                 </td>
-                <td><input type="submit" value="Insertar registro" name="create"></td>
+                <td><input type="submit" value="Insertar registro" name="create" class="boton_accion"></td>
             </tr>
         </table>
     </form>
