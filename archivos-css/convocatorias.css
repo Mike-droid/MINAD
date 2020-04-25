@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    font-family: 'Baloo Da 2'; /*Importada de Google ;D*/
+}
+
+body{
+    background-color: #3399ff;
+}
+
+.botones{
+    display: flex;
+    flex-direction: row;
+    /*border: firebrick 1px solid;*/
+    justify-content: space-evenly;
+}
+
+.regresar{
+    text-decoration: none;
+    color: black;
+}
+
+.regresar:hover{
+    color: gold;
+}
+
+.boton1,
+.boton2{
+    padding-left: 3%;
+    padding-right: 3%;
+    background-color: gold;
+    border-radius: 15%;
+    font-size: 3em;
+}

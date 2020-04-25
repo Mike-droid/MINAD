@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../archivos-css/tablas.css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Da+2&display=swap" rel="stylesheet"> 
     <title>Tabla de docentes</title>
 </head>
 
@@ -50,14 +52,14 @@
     <h1>Manejar información de los docentes</h1>
 
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-        <table border="1">
+        <table>
             <tr>
-                <td>Número de trabajador</td>
-                <td>e-mail</td>
-                <td>Nombre</td>
-                <td>Apellidos</td>
-                <td>Contraseña</td>
-                <td>Teléfono</td>
+                <td class="table_column_name">Número de trabajador</td>
+                <td class="table_column_name">e-mail</td>
+                <td class="table_column_name">Nombre</td>
+                <td class="table_column_name">Apellidos</td>
+                <td class="table_column_name">Contraseña</td>
+                <td class="table_column_name">Teléfono</td>
             </tr>
 
         <?php foreach($registros as $docente):?>
@@ -69,7 +71,7 @@
                 <td> <?php echo $docente->Contrasena; ?> </td>
                 <td> <?php echo $docente->Telefono; ?> </td>
 
-                <td>
+                <td class="boton_accion">
                     <a href="editarDocentes.php?NumeroTrabajador= <?php echo $docente->NumeroTrabajador?> &
                             CorreoDocente= <?php echo $docente->CorreoDocente?> & 
                             Nombres= <?php echo $docente->Nombres?> & 
@@ -79,7 +81,7 @@
                         <input type="button" value="Actualizar">
                     </a>
                 </td>
-                <td>
+                <td class="boton_accion">
                 <a href="borrarDocentes.php?NumeroTrabajador= <?php echo $docente->NumeroTrabajador?>">
                         <input type="button" value="Borrar">
                     </a>
@@ -94,7 +96,7 @@
             <td><input type="text" name="apellido" id="" placeholder="Inserta un apellido"></td>
             <td><input type="password" name="contra" id="" placeholder="Inserta una contraseña"></td>
             <td><input type="number" name="telefono" id="" placeholder="Máximo 10 digitos"></td>
-            <td><input type="submit" name="create" value="Insertar registro"></td>
+            <td><input type="submit" name="create" value="Insertar registro" class="boton_accion"></td>
         </tr>
         </table>
     </form>

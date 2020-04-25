@@ -1,0 +1,75 @@
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    font-family: 'Baloo Da 2'; /*Importada de Google ;D*/
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    color: mediumblue;
+}
+
+table,tr,td{
+    border: 1px solid black;
+    font-size: 20px;
+}
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,tr{
+    padding: 8px;
+    text-align: left;
+}
+
+h1{
+    font-size: 2em;
+    text-align: center;
+}
+
+.table_column_name{
+    background-color: royalblue;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #d9d9d9;
+}
+
+input[type="button"],
+input[type="submit"]{
+    background-color: royalblue;
+    border: none;
+    color: white;
+    width: 100%;
+}
+
+input[type="button"]:hover,
+input[type="submit"]:hover{
+    background-color: skyblue;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="date"],
+input[type="email"]{
+    width: 100%;
+}
+
+.boton_accion{
+    background-color: royalblue;
+}
+
+.boton_accion:hover{
+    background-color: skyblue;
+}
