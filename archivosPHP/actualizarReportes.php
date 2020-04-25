@@ -18,23 +18,19 @@
             $FKdocNum = $_GET["Proyectos_Docentes_NumeroTrabajador"];
         } else {
             $idReporte = $_POST["idReporte"];
-            $descripcion = $_POST["descripcion"];
+            $descripcion = $_POST["Descripcion"];
             $FKidpro = $_POST["Proyectos_idProyectos"];
             $FKdocNum = $_POST["Proyectos_Docentes_NumeroTrabajador"];
 
             //Tal vez no sea la mejor idea modificar las foreign keys
-            $sql = "UPDATE reporte SET Descripcion = :descp ,
-            Proyectos_idProyectos = :idpros , 
-            Proyectos_Docentes_NumeroTrabajador = :pronumdoc 
+            $sql = "UPDATE reporte SET Descripcion = :descp 
             WHERE idReporte = :idrep";
 
             $resultado = $base->prepare($sql);
 
             $resultado->execute(array(
             ":descp"=>$descripcion , 
-            ":idrep"=>$idReporte,
-            ":idpros"=>$FKidpro,
-            ":pronumdoc"=>$FKdocNum));
+            ":idrep"=>$idReporte));
 
             header("location:reportes.php");
         }

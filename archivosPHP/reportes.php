@@ -78,8 +78,8 @@
                     <td>
                         <a href="actualizarReportes.php?idReporte= <?php echo $reportes->idReporte ;?> &
                         Descripcion= <?php echo $reportes->Descripcion ;?> & 
-                        Proyectos_idProyectos= <?php $reportes->Proyectos_idProyectos ;?> &
-                        Proyectos_Docentes_NumeroTrabajador= <?php $reportes->Proyectos_Docentes_NumeroTrabajador ;?>">
+                        Proyectos_idProyectos= <?php echo $reportes->Proyectos_idProyectos ;?> &
+                        Proyectos_Docentes_NumeroTrabajador= <?php echo $reportes->Proyectos_Docentes_NumeroTrabajador ;?>">
                             <input type="button" value="Actualizar">
                         </a>
                     </td>
