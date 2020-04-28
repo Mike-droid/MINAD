@@ -14,8 +14,9 @@ body{
 .botones{
     display: flex;
     flex-direction: row;
-    /*border: firebrick 1px solid;*/
     justify-content: space-evenly;
+    height: 500px;
+    align-items: center;
 }
 
 .regresar{
@@ -32,6 +33,5 @@ body{
     padding-left: 3%;
     padding-right: 3%;
     background-color: gold;
-    border-radius: 15%;
     font-size: 3em;
 }

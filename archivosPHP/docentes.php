@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../archivos-css/tablas.css">
-    <link href="https://fonts.googleapis.com/css?family=Baloo+Da+2&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Da+2&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="shortcut icon" type="image/png" href="../imagenes/minadLogo.png">
     <title>Tabla de docentes</title>
 </head>
 
