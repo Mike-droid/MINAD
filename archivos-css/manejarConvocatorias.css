@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    font-family: 'Baloo Da 2'; /*Importada de Google ;D*/
+}
+
+.formulario{
+    display: flex;
+    justify-content: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+form{
+    border: 20px slateblue solid;
+    width: 85%;
+    border-radius: 20px;
+}
+
+header,
+.description{
+    display: flex;
+    justify-content: center;
+}
+
+header h1{
+    font-size: 5em;
+    text-transform: uppercase;
+}
+
+.FECHA,
+.llaveFK{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.boton{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+input[type="date"],
+select{
+    margin-left: 10px;
+}
+
+input[type="date"],
+select{
+    border:4px cornflowerblue solid;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+textarea{
+    margin-top: 20px;
+    width: 70%;
+    height: 400px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    border-width: 4px;
+}
+
+textarea:focus{
+    background-color: cornsilk;
+}
+
+input[type="submit"]{
+    background-color: cornflowerblue;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover{
+    background-color: mediumblue;
+}

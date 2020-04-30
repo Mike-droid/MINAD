@@ -9,6 +9,4 @@
         die('Error' . $e->getMessage());
         echo "Línea del error" . $e->getLine();
     }
-
-//$conexion=mysqli_connect('mysql:host=localhost:3308','root','','proyectosinvestigacion') or die(mysqli_error());
 ?>

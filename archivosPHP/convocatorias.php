@@ -14,7 +14,7 @@
 
     <div class="botones">
         <div>
-            <a href="">
+            <a href="ManejarConvocatorias.php">
                 <input type="button" value="Insertar convocatorias" class="boton1">
             </a>
         </div>

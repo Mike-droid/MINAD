@@ -9,11 +9,11 @@
     <?php 
         include("datosConexionBBDD.php");
 
-        $numCon = $_GET["NumeroControl"]; //Tiene que llamarse igual que alumnos.php línea 65
+        $idConvo = $_GET["idConvocatorias"]; //tiene que llamarse igual que ConsultarConvocatorias.php línea 33
 
-        $base->query("DELETE FROM alumnos WHERE NumeroControl = '$numCon'");
+        $base->query("DELETE FROM convocatorias WHERE idConvocatorias = '$idConvo'");
 
-        header("location:alumnos.php");
+        header("location:ConsultarConvocatorias.php");
     ?>
 </body>
 </html>

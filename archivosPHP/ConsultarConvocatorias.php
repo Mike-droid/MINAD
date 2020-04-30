@@ -20,7 +20,7 @@
 
     ?>
 
-    <table border="1">
+    <table>
         <tr>
             <td class="table_column_name">ID Convocatoria</td>
             <td class="table_column_name">Fecha</td>
@@ -42,6 +42,21 @@
                         echo $resultado2->NombreInstitucion;
                     }
                 ?></td>
+
+            <td class="boton_accion">
+                <a href="actualizarConvocatorias.php?idConvocatorias= <?php echo $convocatorias->idConvocatorias ;?> & 
+                FechaConvocatoria= <?php echo $convocatorias->FechaConvocatoria ;?> & 
+                Descripcion= <?php echo $convocatorias->Descripcion ;?> & 
+                Institucion_idInstitucion= <?php echo $convocatorias->Institucion_idInstitucion ;?>">
+                    <input type="button" value="Actualizar">
+                </a>
+            </td>
+            <td class="boton_accion">
+                <a href="borrarConvocatorias.php?idConvocatorias= <?php echo $convocatorias->idConvocatorias ;?>">
+                    <input type="button" value="Borrar">
+                </a>
+            </td>    
+
             </tr>
         <?php endforeach ?>   
 
