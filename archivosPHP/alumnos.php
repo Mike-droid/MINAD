@@ -15,7 +15,7 @@
 
         $registros = $base->query("SELECT * FROM alumnos")->fetchAll(PDO::FETCH_OBJ);
 
-        if (isset($_POST["create"])) { //si pulsaste submit
+        if (isset($_POST["create"])) { //!si pulsaste submit
             $NumeroControl = $_POST["numeroControl"];
             $emailA = $_POST["emailA"];
             $nombre = $_POST["nombre"];
@@ -137,7 +137,7 @@
                     </select>
                 </td>
                 <td>
-                <select name="idDocente" id="">
+                    <select name="idDocente" id="">
                         <?php 
                         include("datosConexionBBDD.php");
                         $registrosDoc = $base->query("SELECT * FROM docentes")->fetchAll(PDO::FETCH_OBJ);
