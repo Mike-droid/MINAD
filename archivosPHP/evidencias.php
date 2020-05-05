@@ -85,6 +85,7 @@
                                 echo $resultado2->NombreProyecto;
                             }
                     ?></td>
+
                     <td><?php
                             include("datosConexionBBDD.php");
                             $consultaDocs = $base->query(
@@ -96,14 +97,24 @@
                     ?></td>
 
                     <td class="boton_accion">
-                            <a href="">
-                                <input type="button" value="Actualizar">
-                            </a>
+                                <a href="actualizarEvidencias.php?idEvidencias= <?php echo $evidencias->idEvidencias ;?> &
+                                Evidencia= <?php echo $evidencias->Evidencia ;?> &
+                                Proyectos_idProyectos= <?php $evidencias->Proyectos_idProyectos ;?> &
+                                Proyectos_Docentes_NumeroTrabajador= <?php echo $evidencias->Proyectos_Docentes_NumeroTrabajador ;?>">
+                                    <input type="button" value="Actualizar">
+                                </a>
                     </td>
+
                     <td class="boton_accion">
-                            <a href="">
+                            <a href="borrarEvidencias.php?idEvidencias= <?php echo $evidencias->idEvidencias ;?>">
                                 <input type="button" value="Borrar">
                             </a>
+                    </td>
+
+                    <td class="boton_accion">
+                        <a href="leerImagen.php?idEvidencias= <?php echo $evidencias->idEvidencias ;?>">
+                            <input type="button" value="Ver imagen">
+                        </a>
                     </td>
                 </tr>
             <?php endforeach;?>

@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Da+2&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../archivos-css/tablas.css">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="shortcut icon" type="image/png" href="../imagenes/minadLogo.png">
     <title>Actualizar información de las carreras</title>
 </head>
 <body>
+    <a href="carreras.php">Regresar</a>
     <h1>Actualizar</h1>
     <?php 
         include("datosConexionBBDD.php");

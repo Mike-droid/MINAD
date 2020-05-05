@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Da+2&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../archivos-css/tablas.css">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="shortcut icon" type="image/png" href="../imagenes/minadLogo.png">
+    <title>Actualizando información de los alumnos</title>
 </head>
 <body>
     <a href="alumnos.php">Regresar</a>
@@ -52,7 +56,7 @@
     ?>
 
     <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
-        <table border="1">
+        <table>
             <tr>
                 <td>Número de control</td>
                 <td><label for="">
@@ -127,7 +131,7 @@
                 </td>
             </tr>
             <tr>
-                <input type="submit" value="Actualizar" name="bot_act">
+                <td><input type="submit" value="Actualizar" name="bot_act"></td>
             </tr>
         </table>
     </form>
