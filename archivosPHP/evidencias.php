@@ -99,7 +99,7 @@
                     <td class="boton_accion">
                                 <a href="actualizarEvidencias.php?idEvidencias= <?php echo $evidencias->idEvidencias ;?> &
                                 Evidencia= <?php echo $evidencias->Evidencia ;?> &
-                                Proyectos_idProyectos= <?php $evidencias->Proyectos_idProyectos ;?> &
+                                Proyectos_idProyectos= <?php echo $evidencias->Proyectos_idProyectos ;?> &
                                 Proyectos_Docentes_NumeroTrabajador= <?php echo $evidencias->Proyectos_Docentes_NumeroTrabajador ;?>">
                                     <input type="button" value="Actualizar">
                                 </a>

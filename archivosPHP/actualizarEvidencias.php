@@ -18,6 +18,7 @@
 
         if (!isset($_POST["bot_act"])) {
             $idEvidencia = $_GET["idEvidencias"];
+            $nombreImagen =$_GET["Evidencia"];
             $FKidProyecto = $_GET["Proyectos_idProyectos"];
             $FKnumTrabajador = $_GET["Proyectos_Docentes_NumeroTrabajador"];
 
@@ -31,15 +32,6 @@
             $FKidProyecto = $_POST["Proyectos_idProyectos"];
             $FKnumTrabajador = $_POST["Proyectos_Docentes_NumeroTrabajador"];
 
-            $stmt_edit = $base->prepare("SELECT idEvidencias, Evidencia = ':fotito' 
-            FROM evidencias WHERE idEvidencias = ':idEvi'");
-            $stmt_edit->execute(array(':idEvi'=>$idEvidencia , 
-                                        ':fotito'=>$nombreImagen , 
-                                        ':fotito'=>$tipoImagen ,
-                                        ':fotito'=>$tamanoImagen));
-            $edit_row = $stmt_edit->fetch(PDO::FETCH_ASSOC);
-            extract(array($edit_row));
-
             if ($tamanoImagen<=5000000) { //! 1 millón de bytes es 1 mega
 
                 if ($tipoImagen=="image/jpeg" || $tipoImagen=="image/jpg" || $tipoImagen=="image/png") {
@@ -47,7 +39,6 @@
                     //! \archivosPHP\ImagenesEvidencias/
                     $carpetaDestino=$_SERVER["DOCUMENT_ROOT"] . "/archivosPHP/ImagenesEvidencias/";
         
-                    //unlink($carpetaDestino.$edit_row['Evidencia']);
                     //! Movemos la imagen del directorio temporal al directorio escogido
                     move_uploaded_file($_FILES["Evidencia"]["tmp_name"],$carpetaDestino.$nombreImagen);            
                 } 
@@ -59,14 +50,20 @@
                 echo "El tamaño excede el límite de 5MB";
             }
 
-            $sql = "UPDATE evidencias SET Evidencia = ':foto' WHERE idEvidencias=':idEvi'";
+            $conexion=mysqli_connect('localhost:3308','root','');
 
-            $resultado = $base->prepare($sql);
-            
-            $resultado->execute(array(":foto"=>$nombreImagen ,
-            ":foto"=>$tipoImagen,
-            ":foto"=>$tamanoImagen,
-            ":idEvi"=>$idEvidencia));
+            if (mysqli_connect_errno()) {
+                echo "Falló al conectar con la BBDD";
+                exit();
+            }
+
+            mysqli_select_db($conexion,'proyectosinvestigacion2') or die ("No se encuentra la BBDD");
+
+            mysqli_set_charset($conexion,'utf8');
+
+            $sql = "UPDATE evidencias SET Evidencia = '$nombreImagen' WHERE idEvidencias = '$idEvidencia'";
+
+            $resultado=mysqli_query($conexion,$sql);
 
             header("location:evidencias.php");
         }

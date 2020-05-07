@@ -1,18 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comprobador de logins</title>
-</head>
-<body>
-    <?php
+<?php
     try {
         $base = new PDO("mysql:host=localhost:3308; dbname=proyectosinvestigacion2", "root","");
 
         $base->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = "SELECT CorreoDocente, Contrasena FROM docentes WHERE CorreoDocente = :correo AND Contrasena = :password";
+        $sql = "SELECT CorreoDocente,Contrasena FROM docentes 
+        WHERE CorreoDocente = :correo AND Contrasena = :password";
 
         $resultado = $base->prepare($sql);
 
@@ -30,31 +23,29 @@
 
         if ($numeroRegistro!=0) 
         {
-                session_start(); //iniciamos sesión para el usuario que se acaba de loguear
+            session_start(); //!iniciamos sesión para el usuario que se acaba de loguear
 
-                $_SESSION["usuario"]=$_POST["correo"];
-                //En la variable super global $_SESSION con 'usuario' para identificar a la variable
-                //'correo' es el cuadro del texto del formulario
+            $_SESSION["usuario"]=$_POST["correo"];
+            //!En la variable super global $_SESSION con 'usuario' para identificar a la variable
+            //!'correo' es el cuadro del texto del formulario
 
-                //Comprobación para ver si se conecta el administrador o un docente 
-                if (strcasecmp($_POST["correo"],"7777@piedrasnegras.tecnm.mx")==0) 
-                {
-                    header("location:pagina_admon.html"); //página del administrador
-                } 
-                else
-                {
-                    header("location:vistaDocente1.php"); //página del docente
-                }
+            //!Comprobación para ver si se conecta el administrador o un docente 
+            if (strcasecmp($_POST["correo"],"7777@piedrasnegras.tecnm.mx")==0) 
+            {
+                header("location:pagina_admon.html"); //!página del administrador
+            } 
+            else
+            {
+                header("location:vistaDocente1.php"); //!página del docente
+            }
                 
         } 
         else 
         {
-            header("location:index.php"); //Si no está registrado el usuario lo regresa a la página index.php
+            header("location:index.php"); //!Si no está registrado el usuario lo regresa a la página index.php
         }
         
     } catch (Exception $e) {
         die("Error: " . $e->getMessage());
     }
     ?>
-</body>
-</html>

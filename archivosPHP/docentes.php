@@ -18,7 +18,7 @@
 
     $registros = $base->query("SELECT * FROM docentes")->fetchAll(PDO::FETCH_OBJ);
 
-        if (isset($_POST["create"])) { //Si pulsaste el botón de submit ... 
+        if (isset($_POST["create"])) { //!Si pulsaste el botón de submit ... 
             $NumTra = $_POST["NumTra"];
             $correoDoc = $_POST["correoDoc"];
             $nombre = $_POST["nombre"];
