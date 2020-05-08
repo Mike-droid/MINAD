@@ -48,7 +48,7 @@
     ?>
     <h1>Manejar la información de los proyectos</h1>
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-        <table border="1">
+        <table>
             <tr>
                 <td class="table_column_name">ID de proyecto</td>
                 <td class="table_column_name">Nombre de proyecto</td>

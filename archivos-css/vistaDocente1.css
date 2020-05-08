@@ -1,0 +1,12 @@
+.close{
+    background-color: gold;
+    border: 1px black solid;
+    font-size: 22px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+section{
+    margin: 25px 10px;
+}
