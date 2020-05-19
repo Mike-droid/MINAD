@@ -7,6 +7,7 @@
     <link rel="shortcut icon" type="image/png" href="imagenes/minadLogo.png">
     <link rel="stylesheet" href="archivos-css/tablas.css">
     <link rel="stylesheet" href="archivos-css/vistaDocente1.css">
+    <link rel="stylesheet" href="archivos-css/centrarTablas.css">
     <title>Vista docente</title>
 </head>
 <body>
@@ -63,7 +64,6 @@
         <h1>Bienvenido <?php echo $maestros->Nombres . " " . $maestros->Apellidos;?></h1>
     </header>
     
-
     <section class="proyectos">
         <h2>Aquí está la información de los proyectos en los que es participe:</h2>
         <table>

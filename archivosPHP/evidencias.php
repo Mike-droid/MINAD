@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../archivos-css/tablas.css">
     <link rel="apple-touch-icon" href="favicon.png">
     <link rel="shortcut icon" type="image/png" href="../imagenes/minadLogo.png">
+    <link rel="stylesheet" href="../archivos-css/centrarTablas.css">
     <title>Evidencias de proyectos</title>
 </head>
 <body>
@@ -106,9 +107,20 @@
                     </td>
 
                     <td class="boton_accion">
-                            <a href="borrarEvidencias.php?idEvidencias= <?php echo $evidencias->idEvidencias ;?>">
-                                <input type="button" value="Borrar">
-                            </a>
+                        <a href="borrarEvidencias.php?idEvidencias= <?php echo $evidencias->idEvidencias ;?>" onclick="return borrar();">
+                            <input type="button" value="Borrar">
+                        </a>
+
+                        <script>
+                            function borrar() {
+                                let x = confirm("¿Estás seguro de querer eliminar este registro?");
+                                if (x) {
+                                    return true;
+                                } else {
+                                    return false;
+                                }
+                            }
+                        </script>
                     </td>
 
                     <td class="boton_accion">

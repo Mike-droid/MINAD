@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../archivos-css/tablas.css">
     <link rel="apple-touch-icon" href="favicon.png">
     <link rel="shortcut icon" type="image/png" href="../imagenes/minadLogo.png">
+    <link rel="stylesheet" href="../archivos-css/centrarTablas.css">
     <title>Instituciones tienen carreras</title>
 </head>
 <body>
