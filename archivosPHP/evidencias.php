@@ -12,7 +12,7 @@
 </head>
 <body>
     <a href="../pagina_admon.html">Regresar</a>
-    <h1>Aquí están las evidencias</h1>
+    <h1>Manejar información de las evidencias</h1>
 
     <?php
         include("datosConexionBBDD.php");

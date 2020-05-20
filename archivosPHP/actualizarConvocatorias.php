@@ -76,7 +76,19 @@
             </div>
         </main>
         <footer class="boton">
-            <input type="submit" value="ACTUALIZAR" name="bot_act">
+            <input type="submit" value="ACTUALIZAR" name="bot_act" onclick="return actualizar();">
+
+            <script>
+                function actualizar() {
+                    let x = confirm("¿Estás seguro de querer actualizar estos datos?");
+                    if (x) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+            </script>
+
         </footer>
 
         </form>

@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="../archivos-css/tablas.css">
     <link rel="apple-touch-icon" href="favicon.png">
     <link rel="shortcut icon" type="image/png" href="../imagenes/minadLogo.png">
+    <link rel="stylesheet" href="../archivos-css/centrarTablas.css">
     <title>Editar información de los docentes</title>
 </head>
 <body>
     <a href="docentes.php">Regresar</a>
-    <h1>Actualizar</h1>
+    <h1>Actualizar datos del docente</h1>
     <?php
         include("datosConexionBBDD.php");
 
@@ -85,7 +86,19 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><input type="submit" value="Actualizar" name="bot_act"></td>
+                    <td><input type="submit" value="Actualizar" name="bot_act" onclick="return actualizar();"></td>
+
+                    <script>
+                        function actualizar() {
+                            let x = confirm("¿Estás seguro de querer actualizar estos datos?");
+                            if (x) {
+                                return true;
+                            } else {
+                                return false;
+                            }
+                        }
+                    </script>
+
                 </tr>
             </table>
         </form>
