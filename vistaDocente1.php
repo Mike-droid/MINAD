@@ -53,6 +53,14 @@
 
         }
 
+        //!Información de los reportes de docentes
+        $registrosReportes = $base->query("SELECT * FROM reporte JOIN Proyectos ON
+        Proyectos_Docentes_NumeroTrabajador = Docentes_NumeroTrabajador WHERE
+        Docentes_NumeroTrabajador = $maestros->NumeroTrabajador")->fetchAll(PDO::FETCH_OBJ);
+        foreach ($registrosReportes as $reportes) {
+
+        }
+
         //!Información de convocatorias
         $registrosConvocatorias = $base->query("SELECT * FROM convocatorias")->fetchAll(PDO::FETCH_OBJ);
         foreach ($registrosConvocatorias as $convocatorias) {
@@ -150,7 +158,7 @@
                                       ":idPro"=>$FKidProyecto ,
                                       ":numTra"=>$FKnumTrabajador));
 
-            header("location:vistaDocente1.php");
+            header('location:vistaDocente1.php');
         }
     ?>
 
@@ -229,6 +237,35 @@
             </tr>
             </table>
         </form>
+    </section>
+
+    <section class="reportes">
+        <h2>Aquí están los reportes de los proyectos</h2>
+        <table>
+            <tr>
+                <td class="table_column_name">ID Reporte</td>
+                <td class="table_column_name">Descripción</td>
+                <td class="table_column_name">Proyecto</td>
+            </tr>
+
+            <?php foreach($registrosReportes as $reportes): ?>
+                <tr>
+                    <td> <?php echo $reportes->idReporte;?> </td>
+                    <td> <?php echo $reportes->Descripcion;?> </td>
+                    <td>
+                        <?php 
+                            include("datosConexionBBDD.php");
+                            $consultaProyectos = $base->query
+                            ("SELECT NombreProyecto FROM Proyectos WHERE idProyectos = 
+                            $reportes->Proyectos_idProyectos")->fetchAll(PDO::FETCH_OBJ);
+                            foreach ($consultaProyectos as $resultado3) {
+                                echo $resultado3->NombreProyecto;
+                            }
+                        ?>
+                    </td>
+                </tr>
+            <?php endforeach ;?>
+        </table>
     </section>
 
     <section class="convocatorias">

@@ -23,8 +23,8 @@
         if (isset($_POST["create"])) { //si pulsaste submit
             $idReporte = $_POST["idReporte"];
             $descripcion = $_POST["descripcion"];
-            $FKidProyecto = $_POST["idProyecto"];
-            $FKnumtrabajador = $_POST["numTrabajador"];
+            $FKidProyecto = $_POST["Proyectos_idProyectos"];
+            $FKnumtrabajador = $_POST["Proyectos_Docentes_NumeroTrabajador"];
 
             $sql = "INSERT INTO reporte
             (idReporte,
@@ -46,7 +46,7 @@
     ?>
 
     <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
-        <table border="1">
+        <table>
             <tr>
                 <td class="table_column_name">ID Reporte</td>
                 <td class="table_column_name">Descripción</td>
@@ -57,7 +57,7 @@
             <?php foreach($registros as $reportes): ?>
                 <tr>
                     <td><?php echo $reportes->idReporte ;?></td>
-                    <td><?php echo $reportes->Descripcion ;?></td>
+                    <td><?php echo $reportes->Descripcion;?></td>
                     <td>
                         <?php 
                             include("datosConexionBBDD.php");
@@ -112,7 +112,7 @@
                 <td><input type="hidden" name="idReporte"></td>
                 <td><input type="text" name="descripcion" id=""></td>
                 <td>
-                    <select name="idProyecto" id="">
+                    <select name="Proyectos_idProyectos" id="">
                         <?php 
                         include("datosConexionBBDD.php");
                         $registrosProyectos = $base->query("SELECT * FROM proyectos")->fetchAll(PDO::FETCH_OBJ);
@@ -122,11 +122,10 @@
                             <?php echo $proyectos->NombreProyecto;?>
                             </option>
                         <?php endforeach;?>
-                        ?>
                     </select>
                 </td>
                 <td>
-                <select name="numTrabajador" id="">
+                <select name="Proyectos_Docentes_NumeroTrabajador" id="">
                         <?php 
                         include("datosConexionBBDD.php");
                         $registrosDoc = $base->query("SELECT * FROM docentes")->fetchAll(PDO::FETCH_OBJ);

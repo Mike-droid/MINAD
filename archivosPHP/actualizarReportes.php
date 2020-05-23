@@ -8,7 +8,7 @@
     <link rel="apple-touch-icon" href="favicon.png">
     <link rel="shortcut icon" type="image/png" href="../imagenes/minadLogo.png">
     <link rel="stylesheet" href="../archivos-css/centrarTablas.css">
-    <title>Document</title>
+    <title>Actualizar reportes</title>
 </head>
 <body>
     <a href="reportes.php">Regresar</a>
@@ -17,7 +17,7 @@
         include("datosConexionBBDD.php");
 
         if (!isset($_POST["bot_act"])) {
-            $idReporte = $_GET["idReporte"]; //tiene que llamarse igual que reportes.php línea 54
+            $idReporte = $_GET["idReporte"]; //!tiene que llamarse igual que reportes.php línea 59
             $descripcion = $_GET["Descripcion"];
             $FKidpro = $_GET["Proyectos_idProyectos"];
             $FKdocNum = $_GET["Proyectos_Docentes_NumeroTrabajador"];
@@ -63,7 +63,7 @@
                     <input type="hidden" name="Proyectos_idProyectos" value="<?php echo $FKidpro; ?>">
                     <?php
                         include("datosConexionBBDD.php");
-                        $registrosProyectos = $base->query("SELECT * FROM proyectos WHERE idProyectos = $FKidpro")->fetchAll(PDO::FETCH_OBJ);
+                        $registrosProyectos = $base->query("SELECT * FROM proyectos WHERE idProyectos = '$FKidpro'")->fetchAll(PDO::FETCH_OBJ);
                         foreach ($registrosProyectos as $proyectos) {
                             echo $proyectos->NombreProyecto;
                         }
@@ -78,7 +78,7 @@
                         <input type="hidden" name="Proyectos_Docentes_NumeroTrabajador" value="<?php echo $FKdocNum ;?>">
                         <?php
                             include("datosConexionBBDD.php");
-                            $registrosDocentes = $base->query("SELECT * FROM docentes WHERE NumeroTrabajador = $FKdocNum")->fetchAll(PDO::FETCH_OBJ);
+                            $registrosDocentes = $base->query("SELECT * FROM docentes WHERE NumeroTrabajador = '$FKdocNum'")->fetchAll(PDO::FETCH_OBJ);
                             foreach ($registrosDocentes as $maestros) {
                                 echo $maestros->Nombres . " " . $maestros->Apellidos ;
                             }
