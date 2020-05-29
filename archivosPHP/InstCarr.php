@@ -37,7 +37,7 @@
     ?>
 
     <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
-        <table border="1">
+        <table>
             <tr>
                 <td class="table_column_name">Institución</td>
                 <td class="table_column_name">Carrera</td>
@@ -66,6 +66,31 @@
                                 echo $resultado3->NombreCarrera;
                             }
                         ;?>
+                    </td>
+
+                    <!-- <td class="boton_accion">
+                        <a href="actualizarInstCarr.php?Institucion_idInstitucion=<?php echo $datos->Institucion_idInstitucion;?> &
+                        Carrera_idCarrera=<?php echo $datos->Carrera_idCarrera;?>">
+                            <input type="button" value="Actualizar">
+                        </a>
+                    </td> -->
+                    
+                    <td class="boton_accion">
+                        <a href="eliminarInstCarr.php?Institucion_idInstitucion=<?php echo $datos->Institucion_idInstitucion;?> &
+                        Carrera_idCarrera=<?php echo $datos->Carrera_idCarrera;?>">
+                            <input type="button" value="Eliminar" onclick="return borrar();">
+
+                            <script>
+                            function borrar() {
+                                let x = confirm("¿Estás seguro de querer eliminar este registro?");
+                                if (x) {
+                                    return true;
+                                } else {
+                                    return false;
+                                }
+                            }
+                        </script>
+                        </a>
                     </td>
                 </tr>
             <?php endforeach; ?>

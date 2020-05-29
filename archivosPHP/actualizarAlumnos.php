@@ -18,19 +18,19 @@
         include("datosConexionBBDD.php");
 
         if (!isset($_POST["bot_act"])) {
-            $NumeroControl = $_GET["NumeroControl"]; //tiene que llamarse igual que alumnos.php línea 61
+            $NumeroControl = $_GET["NumeroControl"]; //!tiene que llamarse igual que alumnos.php línea 66
             $emailA = $_GET["CorreoAlumno"];
             $nombre = $_GET["Nombres"];
             $apellidos = $_GET["Apellidos"];
-            $FK_proyectosID = $_GET["Proyectos_idProyectos"]; //tiene que llamarse igual que alumnos.php línea 69
+            $FK_proyectosID = $_GET["Proyectos_idProyectos"]; //!tiene que llamarse igual que alumnos.php línea 74
             $FK_idDocente = $_GET["Proyectos_Docentes_NumeroTrabajador"];
             $FK_idCarrera = $_GET["Carrera_idCarrera"];
         } else {
-            $NumeroControl = $_POST["NumeroControl"]; //tiene que llamarse igual que alumnos.php línea 61
+            $NumeroControl = $_POST["NumeroControl"]; //!tiene que llamarse igual que alumnos.php línea 61
             $emailA = $_POST["CorreoAlumno"];
             $nombre = $_POST["Nombres"];
             $apellidos = $_POST["Apellidos"];
-            $FK_proyectosID = $_POST["Proyectos_idProyectos"]; //tiene que llamarse igual que alumnos.php línea 69
+            $FK_proyectosID = $_POST["Proyectos_idProyectos"]; //!tiene que llamarse igual que alumnos.php línea 74
             $FK_idDocente = $_POST["Proyectos_Docentes_NumeroTrabajador"];
             $FK_idCarrera = $_POST["Carrera_idCarrera"];
 
