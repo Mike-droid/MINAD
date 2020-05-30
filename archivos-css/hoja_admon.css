@@ -82,6 +82,10 @@ h2{
     align-items: center;
 }
 
+.opciones h3{
+    text-align: center;
+}
+
 .iconito{
     background-color: gold;
     padding: 25px;

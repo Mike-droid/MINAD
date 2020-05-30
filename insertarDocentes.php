@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registro insertado con éxito</title>
+    <link rel="stylesheet" href="archivos-css/insertarDocentes.css">
 </head>
 <body>
     <?php
@@ -32,7 +33,7 @@
         ":txtNombreDocente"=>$nombre,":txtApellidoDocente"=>$apellido,":contraDocente"=>$contra,
         ":celDocente"=>$telDocente));
 
-        echo "Registro insertado";
+        echo "<h1>Registro insertado</h1>";
 
         $resultado->closeCursor();
 
